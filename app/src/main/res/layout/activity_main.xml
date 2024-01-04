@@ -6,48 +6,51 @@
     android:layout_height="match_parent"
     android:background="@android:drawable/alert_dark_frame"
     android:orientation="vertical"
-    android:padding="70dp"
     tools:context=".MainActivity"
     tools:ignore="UseCompoundDrawables">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="290dp"
-        android:layout_height="70dp"
-        android:text="Sejam Bem Vindos ao   \n      Croche PTC"
+        android:layout_width="375dp"
+        android:layout_height="84dp"
+        android:text="         Sejam Bem Vindos   \n                 Croche PTC"
         android:textColor="#804FD8"
         android:textSize="28sp"
         android:textStyle="bold"
-        tools:ignore="HardcodedText,TextSizeCheck,TextSizeCheck" />
+        tools:ignore="HardcodedText,TextSizeCheck,TextSizeCheck,VisualLintBounds" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="308dp"
-        android:layout_height="552dp"
+        android:layout_width="369dp"
+        android:layout_height="642dp"
         android:adjustViewBounds="true"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@color/black"
         android:cropToPadding="false"
         android:importantForAccessibility="no"
-        app:srcCompat="@drawable/sim" />
+        android:padding="2dp"
+        app:srcCompat="@drawable/sim"
+        tools:ignore="VisualLintBounds" />
 
     <LinearLayout
-        android:layout_width="288dp"
-        android:layout_height="63dp"
-        android:orientation="horizontal">
+        android:layout_width="369dp"
+        android:layout_height="72dp"
+        tools:ignore="VisualLintBounds">
 
         <Button
             android:id="@+id/btnNavigate"
-            android:layout_width="133dp"
-            android:layout_height="63dp"
+            android:layout_width="197dp"
+            android:layout_height="match_parent"
+            android:onClick="abrir_tela_sobre"
             android:text="Cadastrar"
             android:textAllCaps="true"
-            tools:ignore="ButtonStyle,DuplicateSpeakableTextCheck,HardcodedText" />
+            android:visibility="visible"
+            tools:ignore="ButtonStyle,DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml,VisualLintBounds" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="133dp"
-            android:layout_height="match_parent"
+            android:layout_width="176dp"
+            android:layout_height="78dp"
             android:text="Login"
             android:textAllCaps="true"
             tools:ignore="ButtonStyle,HardcodedText,VisualLintBounds,VisualLintButtonSize" />

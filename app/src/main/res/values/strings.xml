@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">CrochePTC</string>
+    <string name="cadastrar">Cadastrar nome</string>
+    <string name="Login">Fazer Login</string>
+    <string name="Salvar">Salvar conteudo</string>
 
 </resources>
