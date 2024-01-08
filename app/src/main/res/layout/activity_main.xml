@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="375dp"
-        android:layout_height="84dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="         Sejam Bem Vindos   \n                 Croche PTC"
         android:textColor="#804FD8"
         android:textSize="28sp"
@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="369dp"
-        android:layout_height="642dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@color/black"
@@ -33,14 +33,14 @@
         tools:ignore="VisualLintBounds" />
 
     <LinearLayout
-        android:layout_width="369dp"
-        android:layout_height="72dp"
+        android:layout_width="389dp"
+        android:layout_height="85dp"
         tools:ignore="VisualLintBounds">
 
         <Button
             android:id="@+id/btnNavigate"
-            android:layout_width="197dp"
-            android:layout_height="match_parent"
+            android:layout_width="192dp"
+            android:layout_height="75dp"
             android:onClick="abrir_tela_sobre"
             android:text="Cadastrar"
             android:textAllCaps="true"
@@ -49,8 +49,8 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="176dp"
-            android:layout_height="78dp"
+            android:layout_width="192dp"
+            android:layout_height="75dp"
             android:text="Login"
             android:textAllCaps="true"
             tools:ignore="ButtonStyle,HardcodedText,VisualLintBounds,VisualLintButtonSize" />

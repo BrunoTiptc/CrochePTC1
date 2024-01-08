@@ -11,22 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CrochePTC"
-        tools:targetApi="31">
-        <activity
-            android:name=".tela_sobre"
-            android:exported="false" />
+        tools:targetApi="31"
+        tools:ignore="ExtraText">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tela_sobreActivity">
-            <!-- Outros atributos da Activity, se houver -->
-        </activity>
+
+        <activity
+            android:name=".tela_sobre"
+            android:exported="false" />
     </application>
 
 </manifest>

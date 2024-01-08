@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="nome">
+        <item name="android:layout_width">409dp</item>
+        <item name="android:layout_height">613dp</item>
+        <item name="android:layout_marginEnd">1dp</item>
+    </style>
+</resources>

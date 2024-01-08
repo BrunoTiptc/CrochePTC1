@@ -16,5 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public void abrir_tela_sobre(View v){
         Intent intent = new Intent(this, tela_sobre.class);
         startActivity(intent);
+
+
     }
 }
