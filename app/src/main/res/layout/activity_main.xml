@@ -1,59 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:drawable/alert_dark_frame"
+    android:background="@drawable/sim"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    tools:ignore="UseCompoundDrawables">
+    tools:ignore="ExtraText,UseCompoundDrawables">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="         Sejam Bem Vindos   \n                 Croche PTC"
-        android:textColor="#804FD8"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText,TextSizeCheck,TextSizeCheck,VisualLintBounds" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@color/black"
-        android:cropToPadding="false"
-        android:importantForAccessibility="no"
-        android:padding="2dp"
-        app:srcCompat="@drawable/sim"
-        tools:ignore="VisualLintBounds" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="201dp"
+        android:layout_height="67dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="46dp"
+        android:layout_weight="1"
+        android:onClick="abrir_login"
+        android:text="Login"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        tools:ignore="ButtonStyle,HardcodedText,MissingConstraints,UsingOnClickInXml,VisualLintBounds,VisualLintButtonSize" />
 
-    <LinearLayout
-        android:layout_width="389dp"
-        android:layout_height="85dp"
-        tools:ignore="VisualLintBounds">
+    <Button
+        android:id="@+id/btnNavigate"
+        android:layout_width="201dp"
+        android:layout_height="67dp"
+        android:layout_alignEnd="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-210dp"
+        android:layout_marginBottom="46dp"
+        android:layout_weight="1"
+        android:onClick="abrir_tela_sobre"
+        android:text="Cadastrar"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        android:visibility="visible"
+        tools:ignore="ButtonStyle,DuplicateSpeakableTextCheck,HardcodedText,MissingConstraints,UsingOnClickInXml,VisualLintBounds,VisualLintButtonSize" />
 
-        <Button
-            android:id="@+id/btnNavigate"
-            android:layout_width="192dp"
-            android:layout_height="75dp"
-            android:onClick="abrir_tela_sobre"
-            android:text="Cadastrar"
-            android:textAllCaps="true"
-            android:visibility="visible"
-            tools:ignore="ButtonStyle,DuplicateSpeakableTextCheck,HardcodedText,UsingOnClickInXml,VisualLintBounds" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="192dp"
-            android:layout_height="75dp"
-            android:text="Login"
-            android:textAllCaps="true"
-            tools:ignore="ButtonStyle,HardcodedText,VisualLintBounds,VisualLintButtonSize" />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

@@ -3,5 +3,6 @@
     <string name="cadastrar">Cadastrar nome</string>
     <string name="Login">Fazer Login</string>
     <string name="Salvar">Salvar conteudo</string>
+    <string name="textview">TextView</string>
 
 </resources>

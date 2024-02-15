@@ -4,6 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
+    android:visibility="visible"
     tools:context=".login_activity">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="286dp"
+        android:layout_height="105dp"
+        android:fontFamily="@font/fonte"
+        android:padding="10dp"
+        android:text="Entrar"
+        android:textColor="#424242"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149"
+        tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/inputUsername"
+        android:layout_width="267dp"
+        android:layout_height="49dp"
+        android:background="@drawable/input_bg"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/person1"
+        android:ems="10"
+        android:hint="Nome de Usuario"
+        android:inputType="text"
+        android:paddingLeft="22dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447"
+        tools:ignore="HardcodedText,MissingConstraints,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/inputConformepassword"
+        android:layout_width="267dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btn_bg"
+
+        android:drawableLeft="@drawable/security"
+        android:ems="10"
+        android:hint=" ********"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:shadowColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck,UnknownIdInLayout" />
+
+    <TextView
+        android:id="@+id/esqueceu_senha"
+        android:layout_width="155dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_bg"
+        android:text="Esqueceu a senha?"
+        android:textColor="#0C0C0C"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="194dp"
+        android:layout_height="57dp"
+        android:text="ENTRAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.823"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

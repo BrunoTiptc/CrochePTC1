@@ -6,4 +6,9 @@
         <item name="android:layout_height">613dp</item>
         <item name="android:layout_marginEnd">1dp</item>
     </style>
+
+    <style name="textClock">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">677dp</item>
+    </style>
 </resources>
