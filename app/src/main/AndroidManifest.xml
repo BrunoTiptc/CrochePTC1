@@ -14,7 +14,7 @@
         tools:ignore="ExtraText"
         tools:targetApi="31">
         <activity
-            android:name=".login_activity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -26,8 +26,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".tela_sobre"
+            android:name=".Registro"
             android:exported="false" />
+        <activity android:name="com.example.crocheptc.MainActivityImpl" />
     </application>
 
 </manifest>

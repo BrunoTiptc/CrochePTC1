@@ -26,7 +26,7 @@
         tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/inputUsername"
+        android:id="@+id/usuarioEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -64,10 +64,10 @@
         android:paddingBottom="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/inputUsername"
+        app:layout_constraintEnd_toEndOf="@+id/usuarioEditText"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputUsername"
-        app:layout_constraintTop_toBottomOf="@+id/inputUsername"
+        app:layout_constraintStart_toStartOf="@+id/usuarioEditText"
+        app:layout_constraintTop_toBottomOf="@+id/usuarioEditText"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -92,7 +92,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/inputConformepassword"
+        android:id="@+id/inputConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -117,12 +117,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Registrar"
-        app:layout_constraintEnd_toEndOf="@+id/inputConformepassword"
-        app:layout_constraintStart_toStartOf="@+id/inputConformepassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputConformepassword"
+        app:layout_constraintEnd_toEndOf="@+id/senhaEditText"
+        app:layout_constraintStart_toStartOf="@+id/senhaEditText"
+        app:layout_constraintTop_toBottomOf="@+id/senhaEditText"
         tools:ignore="HardcodedText" />
 
     <TextView
+        android:id="@+id/tenhoconta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

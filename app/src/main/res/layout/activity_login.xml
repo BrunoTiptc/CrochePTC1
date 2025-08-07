@@ -24,13 +24,14 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149"
+        app:layout_constraintVertical_bias="0.028"
         tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/inputUsername"
-        android:layout_width="267dp"
-        android:layout_height="49dp"
+        android:id="@+id/usuarioEditText"
+        android:layout_width="316dp"
+        android:layout_height="51dp"
+        android:autofillHints=""
         android:background="@drawable/input_bg"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/person1"
@@ -45,16 +46,16 @@
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447"
+        app:layout_constraintVertical_bias="0.256"
         tools:ignore="HardcodedText,MissingConstraints,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/inputConformepassword"
-        android:layout_width="267dp"
-        android:layout_height="48dp"
+        android:id="@+id/senhaEditText"
+        android:layout_width="315dp"
+        android:layout_height="53dp"
         android:background="@drawable/btn_bg"
 
         android:drawableLeft="@drawable/security"
@@ -66,43 +67,117 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:shadowColor="@color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHighlight="@color/white"
         android:textColorHint="@color/black"
+        android:textCursorDrawable="@drawable/btn_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548"
+        app:layout_constraintVertical_bias="0.341"
         tools:ignore="MissingConstraints,TouchTargetSizeCheck,UnknownIdInLayout" />
 
     <TextView
         android:id="@+id/esqueceu_senha"
-        android:layout_width="155dp"
-        android:layout_height="30dp"
-        android:background="@drawable/btn_bg"
-        android:text="Esqueceu a senha?"
+        android:layout_width="127dp"
+        android:layout_height="21dp"
+        android:background="@android:drawable/bottom_bar"
+        android:text="'Esqueceu a senha?"
         android:textColor="#0C0C0C"
-        android:textSize="18dp"
-        android:textStyle="bold"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintHorizontal_bias="0.828"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.409"
+        tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="194dp"
-        android:layout_height="57dp"
+        android:id="@+id/btnEntrar"
+        android:layout_width="315dp"
+        android:layout_height="44dp"
+        android:background="@drawable/btn_bg"
+        android:gravity="center_horizontal|center_vertical"
         android:text="ENTRAR"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.567"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/btnEntrar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnGoogle"
+        app:layout_constraintStart_toStartOf="@+id/btnEntrar"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar">
+
+        <TextView
+            android:id="@+id/naotemConta"
+            style="@android:style/Widget.TextView.SpinnerItem"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/bottom_bar"
+            android:text="Ainda não tem uma conta?"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black"
+            android:textCursorDrawable="?android:attr/windowSplashScreenBackground"
+            tools:ignore="NewApi" />
+
+        <TextView
+            android:id="@+id/btnRegistrar"
+            style="@android:style/Widget.Material.TextView.SpinnerItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="Inscreva-se "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/design_default_color_error"
+            android:textColorHighlight="@color/design_default_color_error"
+            android:textColorHint="?android:attr/windowSplashScreenBackground"
+            tools:ignore="NewApi" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="167dp"
+        android:layout_height="48dp"
+        android:drawableLeft="@drawable/google"
+        android:paddingLeft="40dp"
+        android:text="Google"
+        android:textAllCaps="true"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnFacebook"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.851"
+        tools:ignore="MissingConstraints,UnknownId" />
+
+    <Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="167dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:drawableRight="@drawable/facebook"
+        android:text="Facebook"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
