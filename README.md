@@ -1,46 +1,54 @@
-📱 Crochê PTC
-Aplicativo Android com autenticação de usuários (login e cadastro), desenvolvido em Java com Android Studio. Projeto acadêmico com foco em práticas reais de desenvolvimento mobile, testes e integração com ferramentas modernas como Firebase e Google Cloud.
+# Crochê PTC 🧶
 
-✅ Funcionalidades atuais
-Tela inicial com opções de Login e Cadastro
+Aplicativo Android desenvolvido em **Java com Android Studio**, focado em **login e cadastro** de usuários. Projeto ideal para portfólio, integrando práticas reais com Firebase, Google Cloud, testes unitários e metodologia Kanban.
 
-Validação de campos obrigatórios
+---
 
-Navegação entre telas
+## ✅ Funcionalidades implementadas
 
-Layout responsivo e estilizado
+| Funcionalidade                | Status     | Observação                                      |
+|------------------------------|------------|-------------------------------------------------|
+| Tela inicial (Login / Cadastro) | ✅ OK       | Hub de entrada com navegação entre telas        |
+| Validação de cadastro        | ✅ OK       | Verifica campos preenchidos e senhas iguais     |
+| Navegação entre atividades   | ✅ OK       | Navega corretamente para Login e Registro        |
+| Layout funcional e limpo     | ✅ OK       | Interface estilizada com recursos visuais        |
+| Estrutura de testes preparada| ✅ OK       | Skeleton para testes unitários disponível        |
 
-Estrutura preparada para testes unitários
+---
 
-🚧 Em desenvolvimento (Kanban em breve)
-Integração com Firebase Authentication
+## 🚀 Funcionalidades planejadas (Kanban)
 
-Tela principal com conteúdo personalizado
+- [ ] Autenticação real com Firebase Auth  
+- [ ] Login persistente / tela principal pós-login  
+- [ ] Recuperação de senha com email  
+- [ ] Persistência de dados com Firestore  
+- [ ] Integração com Google Cloud (Cloud Functions, Analytics, etc.)  
+- [ ] Testes automatizados (JUnit, Espresso)  
+- [ ] Organização de tarefas com Kanban (ex: Jira, Trello, etc.)
 
-Lógica de recuperação de senha
+---
 
-Persistência de dados com Firestore
+## 🛠 Tecnologias utilizadas
 
-Testes unitários com JUnit e Android Test
+- Java + Android Studio  
+- Firebase (Auth, Firestore, Analytics)  
+- JUnit (testes unitários)  
+- Google Cloud  
+- Git / GitHub com fluxo de branch (`funcionalidades-iniciais-ok`)  
+- Layout com ConstraintLayout e recursos gráficos customizados
 
-🔧 Tecnologias utilizadas
-Java + Android Studio
+---
 
-Firebase Authentication
+## 🧪 Testes
 
-Firestore (Database)
+Ainda em fase inicial: integração JUnit básica, pronta para adicionar testes de login, cadastro e lógica de UI no futuro.
 
-JUnit
+---
 
-Google Cloud
+## 📋 Como contribuir
 
-Git + GitHub (GitFlow)
-
-🧪 Testes
-Estrutura inicial de testes unitários já disponível no projeto, com exemplos de uso e organização por camadas.
-
-💡 Organização do projeto
-Planejamento e tarefas estão sendo migrados para metodologia Kanban com uso do Jira (ou ferramenta equivalente).
-
-👨‍💻 Desenvolvedor
-Bruno César – Estudante de Engenharia de Software apaixonado por tecnologia, IA e automação. Projeto desenvolvido como parte da jornada de aprendizado e transição profissional para a área de QA e Cloud.
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/BrunoTiptc/CrochePTC1.git
+   cd CrochePTC1
+   git checkout funcionalidades-iniciais-ok
