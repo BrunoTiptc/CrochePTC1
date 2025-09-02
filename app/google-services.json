@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "204675983695",
+    "project_id": "crocheptc-c3628",
+    "storage_bucket": "crocheptc-c3628.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204675983695:android:d38a737808cb64bc3cbd3a",
+        "android_client_info": {
+          "package_name": "com.seuprojeto.crocheptc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFpnEfy8RG8WHtuf7dzE-_fuDbK7A3W6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
