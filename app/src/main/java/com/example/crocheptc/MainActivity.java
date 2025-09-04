@@ -6,6 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.crocheptc.Registro;
+
+
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
     // Abrir tela de login
     public void abrir_login(View view) {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, com.example.crocheptc.LoginActivity.class);
         startActivity(intent);
     }
 
     // Abrir tela de registro
     public void abrir_tela_sobre(View v) {
-        Intent intent = new Intent(this, Registro.class);
+        Intent intent = new Intent(this, com.example.crocheptc.Registro.class);
         startActivity(intent);
     }
 }

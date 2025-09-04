@@ -25,6 +25,18 @@
         app:layout_constraintVertical_bias="0.13"
         tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck" />
 
+    <Button
+        android:layout_width="169dp"
+        android:layout_height="57dp"
+        android:text="Registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputConfirmPassword"
+        app:layout_constraintVertical_bias="0.339"
+        tools:ignore="HardcodedText" />
+
     <EditText
         android:id="@+id/usuarioEditText"
         android:layout_width="0dp"
@@ -112,25 +124,16 @@
         app:layout_constraintTop_toBottomOf="@+id/inputPassword"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Registrar"
-        app:layout_constraintEnd_toEndOf="@+id/senhaEditText"
-        app:layout_constraintStart_toStartOf="@+id/senhaEditText"
-        app:layout_constraintTop_toBottomOf="@+id/senhaEditText"
-        tools:ignore="HardcodedText" />
-
     <TextView
         android:id="@+id/tenhoconta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginBottom="104dp"
         android:text="Ja tenho uma conta "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister"
         tools:ignore="UnknownId" />
