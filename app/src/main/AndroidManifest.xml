@@ -13,22 +13,23 @@
         android:theme="@style/Theme.CrochePTC"
         tools:ignore="ExtraText"
         tools:targetApi="31">
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+
+        <!-- Meta-dados do Facebook -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <!-- Activities -->
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Registro"
-            android:exported="false" />
-        <activity android:name="com.example.crocheptc.MainActivityImpl" />
+        <activity android:name=".Registro" android:exported="false" />
+        <activity android:name=".MainActivityImpl" />
+        <activity android:name=".LoginActivityImpl" />
     </application>
 
 </manifest>
