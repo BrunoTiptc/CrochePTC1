@@ -32,6 +32,8 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.3.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation ("com.google.firebase:firebase-messaging:23.3.0")
+
 
     // Google Sign-In
     implementation("com.google.android.gms:play-services-auth:20.7.0")
@@ -39,4 +41,7 @@ dependencies {
     // Facebook Login
     implementation ("com.facebook.android:facebook-login:latest.release")
     implementation(libs.firebase.firestore)
+    implementation(libs.androidx.activity)
+    implementation(libs.constraintlayout)
+    testImplementation(libs.junit.junit)
 }

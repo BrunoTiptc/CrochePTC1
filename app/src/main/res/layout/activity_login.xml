@@ -113,8 +113,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="322dp"
+        android:layout_height="57dp"
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -127,28 +127,29 @@
 
         <TextView
             android:id="@+id/naotemConta"
-            style="@android:style/Widget.TextView.SpinnerItem"
             android:layout_width="171dp"
             android:layout_height="match_parent"
             android:background="@android:drawable/bottom_bar"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
             android:text="Ainda não tem uma conta?"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/black"
-            android:textCursorDrawable="?android:attr/windowSplashScreenBackground"
-            tools:ignore="NewApi" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/btnRegistrar"
-            style="@android:style/Widget.Material.TextView.SpinnerItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:text="Inscreva-se "
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:text="Inscreva-se \n aqui"
             android:textColor="@color/design_default_color_error"
-            android:textColorHighlight="@color/design_default_color_error"
-            android:textColorHint="?android:attr/windowSplashScreenBackground"
-            tools:ignore="NewApi" />
+            android:textSize="16sp" />
+
+
     </LinearLayout>
 
     <Button
@@ -179,5 +180,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.849"
         tools:ignore="HardcodedText,MissingConstraints" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:indeterminateTint="?android:attr/colorEdgeEffect"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,14 @@
     <string name="login">Fazer Login</string>
     <string name="salvar">Salvar conteúdo</string>
     <string name="textview">TextView</string>
-    <string name="default_web_client_id">crocheptc-c3628</string>
-    <string name="facebook_app_id">123456789012345</string>
 
+    <!-- Google Sign-In -->
+    <string name="default_web_client_id">crocheptc-c3628</string>
+
+    <!-- Facebook -->
+    <!-- Facebook -->
+    <string name="facebook_app_id">1218165526742618</string>
+    <string name="fb_login_protocol_scheme">fb1218165526742618</string>
+    <string name="facebook_client_token">SEU_CLIENT_TOKEN_DO_FACEBOOK</string>
 
 </resources>
