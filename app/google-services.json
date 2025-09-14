@@ -7,12 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:204675983695:android:d38a737808cb64bc3cbd3a",
+        "mobilesdk_app_id": "1:204675983695:android:af54ff1a3a599a4b3cbd3a",
         "android_client_info": {
           "package_name": "com.example.crocheptc"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "204675983695-m4kc7gkfiu7vpsebiof1db7fmnmqf349.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.crocheptc",
+            "certificate_hash": "672c27b04e5081e4b683ce5365f62167dba837ef"
+          }
+        },
+        {
+          "client_id": "204675983695-f53o1tvfcr7fmiq0vn1gkcanhaufgapp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCFpnEfy8RG8WHtuf7dzE-_fuDbK7A3W6U"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204675983695-f53o1tvfcr7fmiq0vn1gkcanhaufgapp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

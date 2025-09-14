@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     if (task.isSuccessful()) {
                         salvarUsuario(usuario);
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
                         finish();
                     } else {
                         String mensagemUsuario = getString(task);
@@ -155,11 +155,12 @@ public class LoginActivity extends AppCompatActivity {
                         db.collection("usuarios").document(uid).get().addOnCompleteListener(checkTask -> {
                             if (checkTask.isSuccessful()) {
                                 if (checkTask.getResult().exists()) {
-                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                                } else {
+                                    startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
+                                }else {
                                     salvarUsuario(email);
                                     startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
                                 }
+
                                 finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Erro ao verificar usuário", Toast.LENGTH_SHORT).show();
@@ -208,7 +209,7 @@ public class LoginActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     if (task1.isSuccessful()) {
                         salvarUsuario(account.getEmail());
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
                         finish();
                     } else {
                         Toast.makeText(this, "Falha no login Google", Toast.LENGTH_SHORT).show();
