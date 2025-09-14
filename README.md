@@ -1,6 +1,6 @@
 # Crochê PTC 🧶
 
-Aplicativo Android desenvolvido em **Java com Android Studio**, focado em **login e cadastro** de usuários. Projeto ideal para portfólio, integrando práticas reais com Firebase, Google Cloud, testes unitários e metodologia Kanban.
+Aplicativo Android desenvolvido em **Java com Android Studio**, focado em **login e cadastro** de usuários. Projeto com integrando práticas reais com Firebase, Google Cloud, testes unitários e metodologia Kanban.
 
 ---
 
