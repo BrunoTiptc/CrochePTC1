@@ -28,7 +28,7 @@
         tools:ignore="HardcodedText,MissingConstraints,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/usuarioEditText"
+        android:id="@+id/nomeEditText"
         android:layout_width="316dp"
         android:layout_height="51dp"
         android:autofillHints=""

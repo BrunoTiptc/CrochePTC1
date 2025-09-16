@@ -33,9 +33,9 @@
             android:name=".TelaBoasVindas"
             android:exported="false" />
 
-        <!-- Login - Assumindo como LAUNCHER -->
+        <!-- MainActivity como LAUNCHER -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,14 +43,14 @@
             </intent-filter>
         </activity>
 
+        <!-- Login -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
         <!-- Registro -->
         <activity
             android:name=".Registro"
-            android:exported="false" />
-
-        <!-- Main -->
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
 
         <!-- Meta-dados do Facebook -->

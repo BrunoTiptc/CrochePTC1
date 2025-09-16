@@ -1,10 +1,8 @@
 package com.example.crocheptc;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -31,7 +29,9 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
@@ -59,26 +59,24 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-        // Inicializa o SDK do Facebook uma vez só
+        // Inicializa SDK do Facebook e Firebase
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this.getApplication());
 
-
-        // Inicializar Firebase
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        // Binding
-        usuarioEditText = findViewById(R.id.usuarioEditText);
+        // Bindings
+        usuarioEditText = findViewById(R.id.emailEditText);
         senhaEditText = findViewById(R.id.senhaEditText);
         btnEntrar = findViewById(R.id.btnEntrar);
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btnGoogle = findViewById(R.id.btnGoogle);
         btnFacebook = findViewById(R.id.btnFacebook);
         progressBar = findViewById(R.id.progressBar);
-        progressBar.setVisibility(View.GONE);
+        progressBar.setVisibility(android.view.View.GONE);
 
+        // Ações dos botões
         btnEntrar.setOnClickListener(v -> loginComEmailSenha());
         btnRegistrar.setOnClickListener(v -> startActivity(new Intent(this, Registro.class)));
 
@@ -91,6 +89,9 @@ public class LoginActivity extends AppCompatActivity {
         configurarFacebookLogin();
     }
 
+    // ------------------------
+    // LOGIN EMAIL/SENHA
+    // ------------------------
     private void loginComEmailSenha() {
         String usuario = usuarioEditText.getText().toString().trim();
         String senha = senhaEditText.getText().toString().trim();
@@ -100,34 +101,30 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(android.view.View.VISIBLE);
 
-        mAuth.signInWithEmailAndPassword(usuario, senha)
-                .addOnCompleteListener(task -> {
-                    progressBar.setVisibility(View.GONE);
-                    if (task.isSuccessful()) {
-                        salvarUsuario(usuario);
-                        startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
-                        finish();
-                    } else {
-                        String mensagemUsuario = getString(task);
-
-                        Toast.makeText(LoginActivity.this, mensagemUsuario, Toast.LENGTH_SHORT).show();
-                    }
-                });
+        mAuth.signInWithEmailAndPassword(usuario, senha).addOnCompleteListener(task -> {
+            progressBar.setVisibility(android.view.View.GONE);
+            if (task.isSuccessful()) {
+                salvarUsuarioFirestore(mAuth.getCurrentUser());
+                redirecionarPosLogin();
+            } else {
+                Toast.makeText(this, getMensagemErroFirebase(task), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    private static @NonNull String getString(Task<AuthResult> task) {
+    private static @NonNull String getMensagemErroFirebase(Task<AuthResult> task) {
         String erroFirebase = task.getException() != null ? task.getException().getMessage() : "";
-        String mensagemUsuario;
-
-        if (erroFirebase.contains("badly formatted")) mensagemUsuario = "O e-mail está em formato inválido";
-        else if (erroFirebase.contains("no user record")) mensagemUsuario = "Usuário não encontrado";
-        else if (erroFirebase.contains("password is invalid")) mensagemUsuario = "Senha incorreta";
-        else mensagemUsuario = "Falha no login";
-        return mensagemUsuario;
+        if (erroFirebase.contains("badly formatted")) return "O e-mail está em formato inválido";
+        else if (erroFirebase.contains("no user record")) return "Usuário não encontrado";
+        else if (erroFirebase.contains("password is invalid")) return "Senha incorreta";
+        else return "Falha no login";
     }
 
+    // ------------------------
+    // LOGIN GOOGLE
+    // ------------------------
     private void configurarGoogleLogin() {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -136,36 +133,22 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
+    // ------------------------
+    // LOGIN FACEBOOK
+    // ------------------------
     private void configurarFacebookLogin() {
         callbackManager = CallbackManager.Factory.create();
 
-        // Registrar callback UMA vez
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(android.view.View.VISIBLE);
                 AuthCredential credential = FacebookAuthProvider.getCredential(loginResult.getAccessToken().getToken());
-
-                Task<AuthResult> authResultTask = mAuth.signInWithCredential(credential).addOnCompleteListener(task -> {
-                    progressBar.setVisibility(View.GONE);
+                mAuth.signInWithCredential(credential).addOnCompleteListener(task -> {
+                    progressBar.setVisibility(android.view.View.GONE);
                     if (task.isSuccessful() && mAuth.getCurrentUser() != null) {
-                        String uid = mAuth.getCurrentUser().getUid();
-                        String email = mAuth.getCurrentUser().getEmail() != null ? mAuth.getCurrentUser().getEmail() : "";
-
-                        db.collection("usuarios").document(uid).get().addOnCompleteListener(checkTask -> {
-                            if (checkTask.isSuccessful()) {
-                                if (checkTask.getResult().exists()) {
-                                    startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
-                                }else {
-                                    salvarUsuario(email);
-                                    startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
-                                }
-
-                                finish();
-                            } else {
-                                Toast.makeText(LoginActivity.this, "Erro ao verificar usuário", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        salvarUsuarioFirestore(mAuth.getCurrentUser());
+                        redirecionarPosLogin();
                     } else {
                         Toast.makeText(LoginActivity.this, "Falha no login Facebook", Toast.LENGTH_SHORT).show();
                     }
@@ -179,16 +162,28 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(@NonNull FacebookException error) {
-                progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(android.view.View.GONE);
                 Toast.makeText(LoginActivity.this, "Erro no login Facebook: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Botão apenas chama login
-        btnFacebook.setOnClickListener(v -> LoginManager.getInstance()
-                .logInWithReadPermissions(LoginActivity.this, Arrays.asList("email", "public_profile")));
+        btnFacebook.setOnClickListener(v ->
+                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("email", "public_profile")));
     }
 
+    // ------------------------
+    // REDIRECIONAMENTO PÓS LOGIN
+    // ------------------------
+    private void redirecionarPosLogin() {
+        Intent intent = new Intent(LoginActivity.this, TelaBoasVindas.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    // ------------------------
+    // RESULTADOS DAS INTENTS
+    // ------------------------
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -200,23 +195,22 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 if (account == null) {
                     Toast.makeText(this, "Login Google cancelado", Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.GONE);
+                    progressBar.setVisibility(android.view.View.GONE);
                     return;
                 }
-                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(android.view.View.VISIBLE);
                 AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
                 mAuth.signInWithCredential(credential).addOnCompleteListener(task1 -> {
-                    progressBar.setVisibility(View.GONE);
+                    progressBar.setVisibility(android.view.View.GONE);
                     if (task1.isSuccessful()) {
-                        salvarUsuario(account.getEmail());
-                        startActivity(new Intent(LoginActivity.this, TelaBoasVindas.class));
-                        finish();
+                        salvarUsuarioFirestore(mAuth.getCurrentUser());
+                        redirecionarPosLogin();
                     } else {
                         Toast.makeText(this, "Falha no login Google", Toast.LENGTH_SHORT).show();
                     }
                 });
             } catch (ApiException e) {
-                progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(android.view.View.GONE);
                 Toast.makeText(this, "Erro Google Sign In", Toast.LENGTH_SHORT).show();
             }
         }
@@ -225,17 +219,29 @@ public class LoginActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void salvarUsuario(String email) {
-        if (email == null) email = "";
-        Map<String, Object> user = new HashMap<>();
-        user.put("email", email);
-        user.put("dataCriacao", new Date());
+    // ------------------------
+    private void salvarUsuarioFirestore(FirebaseUser user) {
+        if (user == null) return;
 
-        if (mAuth.getCurrentUser() != null) {
-            db.collection("usuarios").document(mAuth.getCurrentUser().getUid())
-                    .set(user)
-                    .addOnSuccessListener(aVoid -> Log.d("DB", "Usuário salvo"))
-                    .addOnFailureListener(e -> Log.w("DB", "Erro ao salvar", e));
-        }
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference usuarioRef = db.collection("usuarios").document(user.getUid());
+
+        usuarioRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                if (!task.getResult().exists()) {
+                    Map<String, Object> usuario = new HashMap<>();
+                    usuario.put("email", user.getEmail());
+                    usuario.put("dataCriacao", new Date());
+                    usuario.put("provedorLogin", user.getProviderData().get(1).getProviderId());
+
+                    usuarioRef.set(usuario)
+                            .addOnSuccessListener(aVoid -> Log.d("FIRESTORE", "Usuário salvo com sucesso!"))
+                            .addOnFailureListener(e -> Log.w("FIRESTORE", "Erro ao salvar usuário", e));
+                } else {
+                    Log.d("FIRESTORE", "Usuário já existe, não sobrescrito.");
+                }
+            }
+        });
     }
+
 }
