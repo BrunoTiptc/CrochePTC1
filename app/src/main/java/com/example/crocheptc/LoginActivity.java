@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         // Bindings
-        usuarioEditText = findViewById(R.id.emailEditText);
+        usuarioEditText = findViewById(R.id.nomeEditText);
         senhaEditText = findViewById(R.id.senhaEditText);
         btnEntrar = findViewById(R.id.btnEntrar);
         btnRegistrar = findViewById(R.id.btnRegistrar);
