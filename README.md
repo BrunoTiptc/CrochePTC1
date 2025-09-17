@@ -20,7 +20,6 @@ Aqui, focamos em autenticação social, permitindo que os usuários acessem o si
 
 Antes de rodar esta branch, certifique-se de ter:
 
-- Node.js / NPM instalado
 - Firebase configurado com seu projeto
 - Credenciais do Google OAuth
 - Token válido do Facebook (com empresa configurada)
