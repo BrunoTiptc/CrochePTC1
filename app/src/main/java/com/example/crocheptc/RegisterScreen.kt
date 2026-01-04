@@ -1,23 +1,45 @@
 package com.example.crocheptc
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.crocheptc.R
+
+// Fonte customizada (arquivo em res/font/font.ttf)
+val customFontFamily = FontFamily(
+    Font(R.font.fonte) // nome do arquivo sem extensão
+)
 
 @Composable
 fun RegisterScreen() {
@@ -37,16 +59,16 @@ fun RegisterScreen() {
                 .fillMaxSize()
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            // Ajustamos o verticalArrangement pare ficar similar ao XML (topo/centro)
             verticalArrangement = Arrangement.Center
         ) {
-            
-             // Título "Cadastro"
+
+            // Título "Cadastro"
             Text(
                 text = "Cadastro",
                 fontSize = 60.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White,
+                fontFamily = customFontFamily,
                 modifier = Modifier.padding(bottom = 32.dp)
             )
 
@@ -60,7 +82,7 @@ fun RegisterScreen() {
                     Icon(
                         painter = painterResource(id = R.drawable.person1),
                         contentDescription = "User Icon",
-                        tint = Color.Unspecified // Manter cor original se for drawable colorido
+                        tint = Color.Unspecified
                     )
                 },
                 modifier = Modifier
@@ -110,7 +132,7 @@ fun RegisterScreen() {
                     Icon(
                         painter = painterResource(id = R.drawable.security),
                         contentDescription = "Password Icon",
-                         tint = Color.Unspecified
+                        tint = Color.Unspecified
                     )
                 },
                 visualTransformation = PasswordVisualTransformation(),
@@ -126,7 +148,7 @@ fun RegisterScreen() {
                 shape = RoundedCornerShape(8.dp)
             )
 
-             // Input Confirmar Senha
+            // Input Confirmar Senha
             var confirmarSenha by remember { mutableStateOf("") }
             OutlinedTextField(
                 value = confirmarSenha,
@@ -136,7 +158,7 @@ fun RegisterScreen() {
                     Icon(
                         painter = painterResource(id = R.drawable.security),
                         contentDescription = "Password Icon",
-                         tint = Color.Unspecified
+                        tint = Color.Unspecified
                     )
                 },
                 visualTransformation = PasswordVisualTransformation(),
@@ -160,9 +182,9 @@ fun RegisterScreen() {
                 modifier = Modifier
                     .width(170.dp)
                     .height(50.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6200EE)) // Ajustar cor
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6200EE))
             ) {
-                Text("Registrar", fontSize = 18.sp)
+                Text("Registrar", fontSize = 18.sp,)
             }
         }
     }

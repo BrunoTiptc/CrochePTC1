@@ -1,0 +1,9 @@
+Com certeza! 😎 Funciona assim:
+
+Você: Edita no Figma, exporta a imagem (png/jpg) e salva na pasta app/src/main/res/drawable do projeto.
+Eu: Só preciso saber o nome do arquivo (ex: novo_fundo.png) e eu troco no código num piscar de olhos:
+kotlin
+Image(painter = painterResource(id = R.drawable.novo_fundo), ...)
+Pode mandar bala no design que eu cuido do código!
+
+Enquanto isso, vou migrar a próxima tela: Tela de Boas Vindas. Vou trocar aqueles RecyclerView antigos por listas modernas do Compose. 🚀
