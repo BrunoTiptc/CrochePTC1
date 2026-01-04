@@ -15,6 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -22,6 +24,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.crocheptc.R
+
+// Fonte customizada (arquivo em res/font/font.ttf)
+private val loginFontFamily = FontFamily(
+    Font(R.font.fonte)
+)
 
 @Composable
 fun LoginScreen() {
@@ -47,10 +54,11 @@ fun LoginScreen() {
 
             // Título "Entrar"
             Text(
+                fontFamily = loginFontFamily,
                 text = "Entrar",
                 fontSize = 60.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFFEFEBEB),
+                color = Color.White,
                 modifier = Modifier.padding(bottom = 32.dp)
             )
 
