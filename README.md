@@ -1,136 +1,64 @@
-🧶 CrochêPTC — Branch Login Social
+# 🧶 CrochêPTC
 
-Bem-vindo à branch dedicada ao Login Social (Google e Facebook) do projeto CrochêPTC 🚀
+Aplicativo Android desenvolvido em **Java** e **Kotlin**, com foco em **autenticação de usuários**, integração com **Firebase** e aplicação de **boas práticas de versionamento com Git**.
 
-Esta branch foi criada com o objetivo de desenvolver, testar e validar fluxos de autenticação social de forma isolada, seguindo boas práticas de versionamento com Git e organização de funcionalidades por branch.
+Este repositório contém o projeto completo, incluindo funcionalidades de Login Social e estrutura para futuras expansões.
 
-🎯 Objetivo da Branch
+---
 
-Implementar e validar:
+## 🎯 Visão Geral
 
-Login com Google
+O CrochêPTC é um projeto de estudo e portfólio que simula um aplicativo real, aplicando conceitos de:
 
-Login com Facebook
+- Desenvolvimento Android (XML & Jetpack Compose)
+- Autenticação segura
+- Integração com banco de dados em nuvem
+- Organização de código
+- Uso profissional de Git (feature branches)
 
-Integração com Firebase Authentication
+---
 
-Persistência de usuários no Firestore
+## ✅ Funcionalidades Principais
 
-Tudo isso sem impactar a branch principal, garantindo segurança no desenvolvimento e facilidade de testes.
+- **Login e Cadastro**
+  - Autenticação com Email e Senha
+  - Login Social (Google e Facebook)
+  - Integração com Firebase Authentication
+  - Persistência de usuários no Firestore
+- **Interface e UX**
+  - Tela de boas-vindas pós-login
+  - Feedback visual durante autenticação
+  - Interface organizada e responsiva
+  - *Migração em andamento para Jetpack Compose*
 
-✅ Funcionalidades Implementadas
+---
 
-🔹 Login com Google
+## 🛠 Tecnologias Utilizadas
 
-Autenticação via conta Google
+- Java & Kotlin
+- Android Studio
+- Firebase Authentication
+- Firebase Firestore
+- Google Sign-In
+- Facebook SDK
+- Jetpack Compose (Login Screen)
 
-Criação automática do usuário no Firestore
+---
 
-🔹 Login com Facebook
+## ▶️ Como Executar
 
-Integração com Facebook SDK
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/BrunoTiptc/CrochePTC1.git
+   ```
+2. Abra o projeto no Android Studio.
+3. Configure o Firebase (`google-services.json`).
+4. Execute em um emulador ou dispositivo físico.
 
-Observação: requer App ID e Secret para funcionamento completo em produção
+---
 
-🔹 Login com Email e Senha
+## 👨‍💻 Autor
 
-Autenticação tradicional
-
-Validação de credenciais
-
-Salvamento de dados no Firestore
-
-🔹 Tela de Boas-Vindas
-
-Fluxo correto pós-login
-
-Uso de finish() para evitar retorno indevido à tela de login
-
-🔹 Feedback ao Usuário
-
-Mensagens de erro claras (email inválido, senha incorreta, etc.)
-
-ProgressBar durante o processo de autenticação
-
-🔹 UI refinada
-
-Melhorias de design e responsividade
-
-Botões customizados para login social
-
-🛠️ Tecnologias Utilizadas
-
-Java
-
-Android Studio
-
-Firebase Authentication
-
-Firebase Firestore
-
-Google Sign-In
-
-Facebook SDK
-
-Git & GitHub
-
-📋 Pré-requisitos
-
-Antes de rodar esta branch, certifique-se de ter:
-
-Projeto configurado no Firebase
-
-Firebase Authentication habilitado
-
-Firestore configurado
-
-Credenciais OAuth do Google
-
-App ID e Secret do Facebook (para fluxo real)
-
-▶️ Como Executar
-
-Clone o repositório:
-
-git clone https://github.com/BrunoTiptc/CrochePTC1.git
-
-
-Acesse o projeto:
-
-cd CrochePTC1
-
-
-Faça checkout da branch:
-
-git checkout feature/login-google-facebook
-
-
-Abra o projeto no Android Studio
-
-Configure o google-services.json
-
-Execute o app em um emulador ou dispositivo físico
-
-🔀 Estratégia de Versionamento
-
-Esta funcionalidade foi desenvolvida em uma branch específica (feature/login-google-facebook) seguindo o conceito de isolamento de features, permitindo:
-
-Desenvolvimento seguro
-
-Testes independentes
-
-Evolução sem quebrar a branch principal
-
-Integração controlada após validação completa
-
-🚧 Status da Branch
-
-✔ Funcionalidade implementada
-✔ Testes manuais realizados
-🚧 Ajustes finais e refinamentos de UI em andamento
-
-👨‍💻 Autor
-
-BrunoTi
+**BrunoTi**
 Estudante de Engenharia de Software
-Foco em Android, QA, Cloud e IA
+Foco em Android, QA, Cloud e Inteligência Artificial
