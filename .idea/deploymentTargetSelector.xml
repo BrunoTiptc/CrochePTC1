@@ -26,8 +26,11 @@
       </SelectionState>
       <SelectionState runConfigName="CrochePTC">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-09-17T01:07:42.147362300Z">
+        <DropdownSelection timestamp="2026-01-04T18:10:02.509735200Z">
           <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="FirebaseDirectAccess" identifier="reservation=projects/crocheptc-c3628/deviceSessions/session-1bxvzbi3ff0x5" />
+            </handle>
             <template>
               <DeviceId pluginId="FirebaseDirectAccess" type="TEMPLATE" identifier="model_id=a15x/34" />
             </template>

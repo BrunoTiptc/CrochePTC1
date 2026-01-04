@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toStartOf="@+id/buttonCadastrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721"
+        app:layout_constraintVertical_bias="0.153"
         app:strokeColor="@android:color/black"
         app:strokeWidth="2dp" />
 
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonLogin"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721"
+        app:layout_constraintVertical_bias="0.129"
         app:strokeColor="@android:color/black"
         app:strokeWidth="2dp" />
 
