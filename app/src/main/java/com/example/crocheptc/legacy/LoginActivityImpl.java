@@ -1,8 +1,7 @@
-package com.example.crocheptc;
+package com.example.crocheptc.legacy;
 
-public class LoginActivityImpl extends LoginActivity {
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
+/**
+ * Legacy code removed in favor of Jetpack Compose.
+ */
+public class LoginActivityImpl {
 }

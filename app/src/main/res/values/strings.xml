@@ -6,12 +6,12 @@
     <string name="textview">TextView</string>
 
     <!-- Google Sign-In -->
-    <string name="default_web_client_id">crocheptc-c3628</string>
+    <string name="default_web_client_id">204675983695-f53o1tvfcr7fmiq0vn1gkcanhaufgapp.apps.googleusercontent.com</string>
 
     <!-- Facebook -->
     <!-- Facebook -->
     <string name="facebook_app_id">1218165526742618</string>
     <string name="fb_login_protocol_scheme">fb1218165526742618</string>
-    <string name="facebook_client_token">SEU_CLIENT_TOKEN_DO_FACEBOOK</string>
+    <string name="facebook_client_token">61fd273a597a5992e6f9a4be54ba1c45</string>
 
 </resources>
